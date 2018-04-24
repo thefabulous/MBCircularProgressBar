@@ -1,6 +1,6 @@
 {
   "name": "MBCircularProgressBar",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "summary": "a circular animatable & IB highly customizable progress bar",
   "description": "a circular animatable & Interface Builder highly customizable progress bar",
   "homepage": "https://github.com/matibot/MBCircularProgressBar",
@@ -14,17 +14,12 @@
   },
   "source": {
     "git": "https://github.com/matibot/MBCircularProgressBar.git",
-    "tag": "0.3.3"
+    "tag": "0.3.4"
   },
   "social_media_url": "https://twitter.com/@b0tnik",
   "platforms": {
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "MBCircularProgressBar": [
-      "Pod/Assets/*.png"
-    ]
-  }
+  "source_files": "Pod/Classes/**/*"
 }

@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-target 'MBCircularProgressBar_Example', :exclusive => true do
+target 'MBCircularProgressBar_Example' do
   pod "MBCircularProgressBar", :path => "../"
 end
 
-target 'MBCircularProgressBar_Tests', :exclusive => true do
+target 'MBCircularProgressBar_Tests' do
   pod "MBCircularProgressBar", :path => "../"
 
   
