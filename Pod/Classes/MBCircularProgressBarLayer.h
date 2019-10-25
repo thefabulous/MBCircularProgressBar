@@ -56,11 +56,6 @@ typedef NS_ENUM(NSInteger, MBCircularProgressBarAppearanceType) {
 @property (nonatomic,assign) NSTimeInterval  animationDuration;
 
 /**
- * The font size of the value text	[0,∞)
- */
-@property (nonatomic,assign) CGFloat  valueFontSize;
-
-/**
  * The name of the font of the unit string
  */
 @property (nonatomic,assign) CGFloat  unitFontSize;
@@ -132,7 +127,7 @@ typedef NS_ENUM(NSInteger, MBCircularProgressBarAppearanceType) {
 /**
  * The name of the font of the unit string
  */
-@property (nonatomic,copy)    NSString  *valueFontName;
+@property (nonatomic,copy)    UIFont  *valueFont;
 
 /**
  * Should show unit screen

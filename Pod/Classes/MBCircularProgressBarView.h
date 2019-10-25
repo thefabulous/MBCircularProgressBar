@@ -41,14 +41,9 @@ IB_DESIGNABLE
 @property (nonatomic,assign) IBInspectable NSInteger decimalPlaces;
 
 /** 
- * The name of the font of the value string
+ * The font of the value string
  */
-@property (nonatomic,copy)   IBInspectable NSString  *valueFontName;
-
-/**
- * The font size of the value text	[0,∞) 
- */
-@property (nonatomic,assign) IBInspectable CGFloat   valueFontSize;
+@property (nonatomic,copy) UIFont  *valueFont;
 
 /** 
  * The value to be displayed in the center 
