@@ -58,12 +58,10 @@
     [self setProgressLineWidth:14.f];
     [self setProgressAngle:80.f];
     [self setUnitFontSize:-1];
-    [self setValueFontSize:-1];
     [self setValueDecimalFontSize:-1];
     [self setDecimalPlaces:0];
     [self setShowUnitString:YES];
     [self setShowValueString:YES];
-    [self setValueFontName:@"HelveticaNeue-Thin"];
     [self setTextOffset:CGPointMake(0, 0)];
     [self setUnitFontName:@"HelveticaNeue-Thin"];
     [self setCountdown:NO];
@@ -144,14 +142,6 @@
 
 -(CGFloat)unitFontSize{
     return self.progressLayer.unitFontSize;
-}
-
--(void)setValueFontSize:(CGFloat)valueFontSize{
-    self.progressLayer.valueFontSize = valueFontSize;
-}
-
--(CGFloat)valueFontSize{
-    return self.progressLayer.valueFontSize;
 }
 
 -(void)setUnitString:(NSString *)unitString{
@@ -273,12 +263,12 @@
   return self.progressLayer.unitFontName;
 }
 
--(void)setValueFontName:(NSString *)valueFontName{
-  self.progressLayer.valueFontName = valueFontName;
+-(void)setValueFont:(UIFont *)valueFont{
+  self.progressLayer.valueFont = valueFont;
 }
 
--(NSString *)valueFontName{
-  return self.progressLayer.valueFontName;
+-(NSString *)valueFont{
+  return self.progressLayer.valueFont;
 }
 
 -(void)setShowUnitString:(BOOL)showUnitString{

@@ -15,7 +15,6 @@
 @dynamic value;
 @dynamic maxValue;
 @dynamic borderPadding;
-@dynamic valueFontSize;
 @dynamic unitString;
 @dynamic unitFontSize;
 @dynamic progressLineWidth;
@@ -33,7 +32,7 @@
 @dynamic decimalPlaces;
 @dynamic valueDecimalFontSize;
 @dynamic unitFontName;
-@dynamic valueFontName;
+@dynamic valueFont;
 @dynamic showUnitString;
 @dynamic showValueString;
 @dynamic textOffset;
@@ -146,10 +145,10 @@
 - (void)drawText:(CGRect)rect context:(CGContextRef)c{
   NSMutableParagraphStyle* textStyle = NSMutableParagraphStyle.defaultParagraphStyle.mutableCopy;
   textStyle.alignment = NSTextAlignmentLeft;
-  
-  CGFloat valueFontSize = self.valueFontSize == -1 ? CGRectGetHeight(rect)/5 : self.valueFontSize;
-  
-  NSDictionary* valueFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: self.valueFontName size:valueFontSize], NSForegroundColorAttributeName: self.fontColor, NSParagraphStyleAttributeName: textStyle};
+
+  NSDictionary* valueFontAttributes = @{NSFontAttributeName: self.valueFont,
+                                        NSForegroundColorAttributeName: self.fontColor,
+                                        NSParagraphStyleAttributeName: textStyle};
   
   NSMutableAttributedString *text = [NSMutableAttributedString new];
   
@@ -168,7 +167,9 @@
   // set the decimal font size
   NSUInteger decimalLocation = [text.string rangeOfString:@"."].location;
   if (decimalLocation != NSNotFound){
-    NSDictionary* valueDecimalFontAttributes = @{NSFontAttributeName: [UIFont fontWithName: self.valueFontName size:self.valueDecimalFontSize == -1 ? valueFontSize : self.valueDecimalFontSize], NSForegroundColorAttributeName: self.fontColor, NSParagraphStyleAttributeName: textStyle};
+    NSDictionary* valueDecimalFontAttributes = @{NSFontAttributeName: valueFont,
+                                                 NSForegroundColorAttributeName: self.fontColor,
+                                                 NSParagraphStyleAttributeName: textStyle};
     NSRange decimalRange = NSMakeRange(decimalLocation, text.length - decimalLocation);
     [text setAttributes:valueDecimalFontAttributes range:decimalRange];
   }
