@@ -65,6 +65,7 @@
     [self setTextOffset:CGPointMake(0, 0)];
     [self setUnitFontName:@"HelveticaNeue-Thin"];
     [self setCountdown:NO];
+    [self setValueFont:[UIFont boldSystemFontOfSize:60]];
 }
 
 #pragma mark - Getters and Setters for layer properties
