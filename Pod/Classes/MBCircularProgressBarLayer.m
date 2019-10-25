@@ -167,7 +167,7 @@
   // set the decimal font size
   NSUInteger decimalLocation = [text.string rangeOfString:@"."].location;
   if (decimalLocation != NSNotFound){
-    NSDictionary* valueDecimalFontAttributes = @{NSFontAttributeName: valueFont,
+    NSDictionary* valueDecimalFontAttributes = @{NSFontAttributeName: self.valueFont,
                                                  NSForegroundColorAttributeName: self.fontColor,
                                                  NSParagraphStyleAttributeName: textStyle};
     NSRange decimalRange = NSMakeRange(decimalLocation, text.length - decimalLocation);
